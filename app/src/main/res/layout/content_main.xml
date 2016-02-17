@@ -15,5 +15,21 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Wait For Question"
+        android:id="@+id/indicatorTextView"
+        android:layout_above="@+id/answerButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="87dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:background="#cccccc"
+        android:text="Wait!"
+        android:id="@+id/answerButton"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="onAnswerButtonClick" />
 </RelativeLayout>
