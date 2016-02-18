@@ -94,16 +94,15 @@ public class MainActivity extends AppCompatActivity {
                 if (dataSnapshot == null)
                     return;
                 Log.d(TAG, "dataSnapshot=" + dataSnapshot);
+                isAnsweredByMe = false;
                 isQuestionActive = dataSnapshot.getValue(boolean.class);
                 if (!isQuestionActive) {
-                    isAnsweredByMe = false;
                     indicatorText.setText("Wait For Question");
                     answerButton.setText("Wait!");
                     answerButton.setEnabled(false);
                     answerButton.setBackgroundColor(Color.parseColor("#cccccc"));
                 } else {
                     indicatorText.setText("Press Button to Answer!!");
-                    isAnsweredByMe = false;
                     answerButton.setText("Answer");
                     answerButton.setEnabled(true);
                     answerButton.setBackgroundColor(Color.parseColor("#00ffff"));
@@ -138,8 +137,12 @@ public class MainActivity extends AppCompatActivity {
                         answerButton.setBackgroundColor(Color.parseColor("#ff0000"));
                     }
                 } else {
-                    //reset again and make question active??
+                    indicatorText.setText("Press Button to Answer!!");
+                    answerButton.setText("Answer");
+                    answerButton.setEnabled(true);
+                    answerButton.setBackgroundColor(Color.parseColor("#00ffff"));
                 }
+                isAnsweredByMe = false;
             }
 
             @Override
